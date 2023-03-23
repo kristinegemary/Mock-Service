@@ -1,0 +1,27 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0">
+    <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ProductModel">
+    <EntityType Name="Product">
+        <Key>
+            <PropertyRef Name="ProductId"/>
+        </Key>
+        <Property xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" 
+        Name="ProductId" Type="Edm.Int16" Nullable="false" p8:StoreGeneratedPattern="Identity"/>
+        <Property Name="ProductName" Type="Edm.String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false"/>
+        <Property Name="SupplierID" Type="Edm.Int16" Nullable="true"/>
+        <Property Name="CategoryID" Type="Edm.Int16" Nullable="true"/>
+        <Property Name="QuantityPerUnit" Type="Edm.String" Nullable="true" MaxLength="20" Unicode="true" FixedLength="false"/>
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="true" Precision="19" Scale="4"/>
+        <Property Name="UnitsInStock" Type="Edm.Int16" Nullable="true"/>
+        <Property Name="UnitsOnOrder" Type="Edm.Int16" Nullable="true"/>
+        <Property Name="ReorderLevel" Type="Edm.Int16" Nullable="true"/>
+        <Property Name="Discontinued" Type="Edm.Boolean" Nullable="false"/>
+    </EntityType>
+    </Schema>
+    <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ODataWebV2.Product.Model">
+        <EntityContainer xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Name="ProductEntities" m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true">
+            <EntitySet Name="ProductSet" EntityType="ProductModel.Product"/>            
+        </EntityContainer>
+    </Schema>
+</edmx:DataServices>
+</edmx:Edmx>   
